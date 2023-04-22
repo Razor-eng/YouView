@@ -38,17 +38,16 @@ export default function Watch() {
   return (
     <>
       {currentPlaying && currentPlaying?.videoId === id && (
-        <div className="max-h-screen overflow-hidden">
+        <div className="max-h-screen ">
           <div style={{ height: "7.5vh" }}>
             <Navbar />
           </div>
           <div className="flex w-full" style={{ height: "92.5vh" }}>
-            <div className="flex gap-y-10 gap-x-5 p-7 mx-20 mr-0 w-full overflow-auto">
-              <div style={{ maxWidth: "800px" }}>
+            <div className="flex md:flex-row flex-col gap-y-10 gap-x-5 sm:p-7 mr-0 w-full overflow-auto">
+              <div style={{ maxWidth: "800px" }} className="lg:mx-20">
                 <div>
                   <iframe
-                    width="800"
-                    height="502"
+                    className="md:w-[800px] md:h-[502px] sm:w-[600px] sm:h-[298px] xs:w-[400px] xs:h-[250px] w-screen h-60"
                     src={`https://www.youtube.com/embed/${id}?autoplay=1`}
                     title="YouTube video player"
                     frameBorder="0"
@@ -57,36 +56,36 @@ export default function Watch() {
                   ></iframe>
                   <div className="mt-5">
                     <p className="text-xl">{currentPlaying.videoTitle}</p>
-                    <div className="flex justify-between mt-1">
+                    <div className="flex justify-between mt-1 flex-col">
                       <div className="text-sm text-gray-400">
                         <span className="after:content-['•'] after:mx-1">
                           {currentPlaying.videoViews} views
                         </span>
                         <span> {currentPlaying.videoAge} ago</span>
                       </div>
-                      <div className="flex items-center gap-4 uppercase">
+                      <div className="flex items-center gap-4 mt-6 uppercase">
                         <div className="flex items-center gap-1 cursor-pointer">
-                          <BiLike className="text-xl" />
-                          <strong>{currentPlaying.videoLikes}</strong>
+                          <BiLike className="sm:text-xl text-xs" />
+                          <strong className="sm:text-base text-xs">{currentPlaying.videoLikes}</strong>
                         </div>
                         <div className="flex items-center gap-1 cursor-pointer">
-                          <BiDislike className="text-xl" />
-                          <strong>dislike</strong>
+                          <BiDislike className="sm:text-xl text-xs" />
+                          <strong className="sm:text-base text-xs">dislike</strong>
                         </div>
                         <div className="flex items-center gap-1 cursor-pointer">
-                          <FaShare className="text-xl" />
-                          <strong>share</strong>
+                          <FaShare className="sm:text-xl text-xs" />
+                          <strong className="sm:text-base text-xs">share</strong>
                         </div>
-                        <div className="flex items-center gap-1 cursor-pointer">
-                          <HiScissors className="text-xl" />
-                          <strong>clip</strong>
+                        <div className="sm:flex hidden items-center gap-1 cursor-pointer">
+                          <HiScissors className="sm:text-xl text-xs" />
+                          <strong className="sm:text-base text-xs">clip</strong>
                         </div>
-                        <div className="flex items-center gap-1 cursor-pointer">
-                          <MdOutlinePlaylistAdd className="text-xl" />
-                          <strong>save</strong>
+                        <div className="sm:flex hidden items-center gap-1 cursor-pointer">
+                          <MdOutlinePlaylistAdd className="sm:text-xl text-xs" />
+                          <strong className="sm:text-base text-xs">save</strong>
                         </div>
-                        <div className="flex items-center gap-1 cursor-pointer">
-                          <BsThreeDots className="text-xl" />
+                        <div className="sm:flex hidden items-center gap-1 cursor-pointer">
+                          <BsThreeDots className="sm:text-xl text-xs" />
                         </div>
                       </div>
                     </div>
@@ -138,7 +137,7 @@ export default function Watch() {
                   </div>
                 </div>
               </div>
-              <div className="mr-24 flex flex-col gap-3">
+              <div className="mr-24 lg:mx-20 flex flex-col gap-3">
                 {getRecommendedVideos.length &&
                   recommendedVideos.map((item) => {
                     return <WatchCard data={item} key={item.videoId} />;

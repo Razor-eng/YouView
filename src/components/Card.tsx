@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Card({ data }: { data: HomePageVideos }) {
   return (
-    <div className="sm:w-64 sm:h-60 flex sm:gap-3 flex-col w-full">
+    <div className="sm:w-64 sm:h-full flex bg-[#4C516D] rounded-md sm:gap-3 flex-col w-full">
       <div className="relative">
         <span className="absolute bottom-3 right-3 text-sm bg-gray-900 px-2 py-0.5 z-10">
           {data.videoDuration}

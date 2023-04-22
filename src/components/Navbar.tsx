@@ -30,8 +30,8 @@ export default function Navbar() {
         </div>
         <Link to="/">
           <div className="sm:flex md:gap-1 md:relative sm:absolute sm:left-1 md:top-0 sm:top-3.5 hidden">
-            <BsYoutube className="text-3xl text-red-600" />
-            <span className="text-xl font-medium">YouTube</span>
+            <BsYoutube className="text-3xl text-[#00BFFF]" />
+            <span className="text-xl font-medium">YouView</span>
           </div>
         </Link>
       </div>

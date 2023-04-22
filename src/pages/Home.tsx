@@ -38,9 +38,9 @@ export default function Home() {
             loader={<Spinner />}
             height={0}
           >
-            <div className="flex flex-wrap items-center justify-evenly sm:p-8 py-5">
+            <div className="flex flex-wrap items-center justify-evenly sm:p-4 gap-y-14 ">
               {videos.map((item: HomePageVideos) => {
-                return <Card data={item} key={item.videoId} />;
+                return (<Card data={item} key={item.videoId} />);
               })}
             </div>
           </InfiniteScroll>
